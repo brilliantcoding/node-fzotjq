@@ -1,4 +1,12 @@
-const { prop, sort, sortWith, ascend, descend } = require('ramda');
+const {
+  prop,
+  sort,
+  sortWith,
+  ascend,
+  descend,
+  isEmpty,
+  isNull
+} = require('ramda');
 const students = [
   { name: 'Quentin', studentBid: '1', formula: 1, efc: 0, originalNeed: 9500 },
   { name: 'Eliot', studentBid: '2', formula: 1, efc: 500, originalNeed: 10000 },
@@ -13,3 +21,17 @@ const sorted = sortWith(
   students
 );
 console.log('sorted: ', sorted);
+
+const payload = {
+  elasticPropName: null,
+  elasticPropMapping: 'text',
+  selectionSetBids: ['bid`'],
+  returnFields: [],
+  searchBy: {}
+};
+const isEmptyOrNull = args => {
+  if (R.isEmpty(args) || R.isNull(args)) {
+    throw new Error('Empty or null parameters values found');
+  }
+};
+isEmptyOrNull(payload.elasticPropName);

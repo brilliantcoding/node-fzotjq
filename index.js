@@ -5,7 +5,7 @@ const {
   ascend,
   descend,
   isEmpty,
-  isNull
+  isNil
 } = require('ramda');
 const students = [
   { name: 'Quentin', studentBid: '1', formula: 1, efc: 0, originalNeed: 9500 },

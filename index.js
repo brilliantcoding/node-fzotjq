@@ -30,7 +30,7 @@ const payload = {
   searchBy: {}
 };
 const isEmptyOrNull = args => {
-  if (R.isEmpty(args) || R.isNull(args)) {
+  if (isEmpty(args) || isNull(args)) {
     throw new Error('Empty or null parameters values found');
   }
 };
